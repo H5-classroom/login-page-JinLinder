@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>loginPage</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="loginPageNy.css">
 </head>
 <body>
-    
-    <div>
-        <h2>Welcome!</h2>
-        <form action="/action_page.php" method="get">
+    <div id="welcomePage">
+    <h2>Welcome!</h2>
+    <button id="menuBtn" >Login</button>
+    </div>
+
+    <div id="loginPage">
+        <form action="/action_page.php" method="post">
             <label for="userName">User Name</label>
             <input type="text" id="userName"> <br><br>
             <label for="passWord">Password</label>
             <input type="text" id="passWord"> <br>
-            
         </form>
-        <button id="loginBtn">Login</button>
+        <button id="loginBtn">Continue</button>
     </div>
-    <script src="loginPage.js"></script>
+
+<script src="loginPageNy.js"> </script>
 </body>
 </html>

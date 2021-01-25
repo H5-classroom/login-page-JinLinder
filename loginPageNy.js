@@ -1,3 +1,13 @@
+let menuBtn = document.getElementById("menuBtn");
+let loginPage = document.getElementById("loginPage");
+let welcomePage = document.getElementById("welcomePage");
+
+menuBtn.addEventListener ("click", function () {
+    loginPage.style.display="block";
+    welcomePage.style.display="none";
+});
+
+
 localStorage.setItem("userName", "Janne");
 localStorage.setItem("passWord", "test");
 let userNameKey = localStorage.getItem("userName");
