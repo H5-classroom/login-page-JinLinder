@@ -1,20 +1,43 @@
-localStorage.setItem("userName", "Janne");
-localStorage.setItem("passWord", "test");
-let userNameKey = localStorage.getItem("userName");
-let passWordKey = localStorage.getItem("passWord");
-console.log(userNameKey);
-console.log(passWordKey);
 
-let userName = document.getElementById("userName")
-let passWord = document.getElementById("passWord");
-let loginBtn = document.getElementById("loginBtn");
-console.log(loginBtn);
-loginBtn.addEventListener("click",function () {
-if (localStorage.getItem("userName")==userName.value&&localStorage.getItem("passWord")==passWord.value) {
-    console.log("It exist!")
-}
-else {
-    console.log("It dose not exist!")
-}
-})
+var welcomePage = `<header>
+<h2>Welcome! Please log in!</h2>
+<button id="menuBtn">Login</button>
+</header>`;
+let contentStart = document.getElementById("contentStart")
+contentStart.innerHTML=welcomePage
+
+var loginTemplate = `<div id="loginPage"><label for="userName">User Name</label>
+<input type="text" id="userName"> <br><br>
+<label for="passWord">Password</label>
+<input type="text" id="passWord"> <br>
+<button id="loginBtn">Continue</button> </div>`
  
+var afterLoginTemplate =`<div id="afterLoginPage"><P>Welcome! You have logged in!</P>
+<button>Log out</button></div>`;
+
+let contentBefore = document.getElementById("contentBefore");
+let contentAfter = document.getElementById("contentAfter");
+
+let userName ="Janne";
+let passWord="test";
+
+let menuBtn = document.getElementById("menuBtn")
+menuBtn.addEventListener("click", function () {
+    contentBefore.innerHTML=loginTemplate;
+    contentStart.innerHTML="";
+    let loginBtn =document.getElementById("loginBtn")
+        loginBtn.addEventListener("click", function () {
+            if (localStorage.getItem("userName")==null) {
+                console.log("Hej Please login");
+            } else {
+                contentAfter.innerHTML= afterLoginTemplate;
+            }
+            console.log("hej");
+        });
+});
+
+
+
+
+
+/**/
