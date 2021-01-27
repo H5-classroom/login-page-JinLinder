@@ -1,16 +1,20 @@
 //skapa loginsida i DOM
-var beforeLoginPage = `<label for="userName">User Name</label>
+var beforeLoginPage = `
+<p>Please login</p>
+<label for="userName">User Name</label>
 <input type="text" id="inputU"> <br><br>
 <label for="passWord">Password</label>
-<input type="text" id="inputP"> <br>
-<button id="loginBtn">Login</button>`;
+<input type="text" id="inputP"> <br><br>
+<button id="loginBtn">Login</button> <br><br>
+<p id="message"></p>`;
+
 let contentBefore = document.getElementById("contentBefore");
 contentBefore.innerHTML=beforeLoginPage;
 //definerar 
 let contentAfter = document.getElementById("contentAfter");
 let loginBtn =document.getElementById("loginBtn")
 
-let userName = "Jin"
+let userName = "Janne"
 let passWord = "test"
 loginBtn.addEventListener("click",function() { 
     let inputU=document.getElementById("inputU");
@@ -40,8 +44,11 @@ loginBtn.addEventListener("click",function() {
         contentBefore.innerHTML=beforeLoginPage;
     })
     }
+    
     else {
         console.log("Can not find");
-    }
+        let message = document.getElementById("message");
+        message.innerHTML= "User name or password is wrong. Please try again.";
+    }   
     
 });
