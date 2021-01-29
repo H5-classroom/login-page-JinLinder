@@ -51,7 +51,7 @@ else {
         let userTextU = inputU.value;
         let inputP=document.getElementById("inputP")
         let userTextP= inputP.value
-        console.log("Användarname är : ", userTextU);
+        console.log("Användarnamn är : ", userTextU);
      //loop kollar om användar finns i arrayn
         for (data in loginData){ 
             if (userTextU==loginData[data].userName && userTextP==loginData[data].passWord) {
